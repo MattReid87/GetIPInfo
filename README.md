@@ -1,6 +1,8 @@
 # IPInfo
+Example project that gathers basic information about an external IP address.  The information includes average ping, hops from local system, geo location information and weather, as well as registration information.  
 
-
+## Example
+Get-IPInfo 151.101.1.140 -json
 
 # Requirements
 * Accepts an IP Address as an Input Parameter
