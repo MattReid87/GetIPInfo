@@ -2,7 +2,7 @@
 
 
 
-# ToDo
+# Requirements
 * Accepts an IP Address as an Input Parameter
   * Prompt for the IP if it isn't given as a commandline option
   * Enforce that the input is a Valid, internet-routable IP address and tell the user if it's not
@@ -14,3 +14,8 @@
   * What ISP, who owns the AS Number, etc
   * Local time and Weather for the Geo-Loc of the IP
 * An optional second commandline parameter to the script that instead outputs all the requested info as a JSON object
+
+# ToDo
+* Error handeling around API
+* URL Builder
+* Clean up object creation
