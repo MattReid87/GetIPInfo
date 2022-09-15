@@ -21,3 +21,4 @@ Get-IPInfo 151.101.1.140 -json
 * Error handeling around API
 * URL Builder
 * Clean up object creation
+* Add verbose logging

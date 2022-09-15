@@ -39,7 +39,7 @@ function Get-IPInfo {
     if ([IPAddress] $ipAddress -as [bool]) {}
   }
   catch {
-    Write-Host 'Invalid IP Address'
+    Write-Output 'Invalid IP Address'
     exit
   }
 
@@ -119,12 +119,13 @@ function Get-IPInfo {
   $ipInfo | Add-Member -NotePropertyName CurrentTempF -NotePropertyValue $WeatherInfo.current_weather.temperature
   $ipInfo | Add-Member -NotePropertyName CurrentTime -NotePropertyValue ([DateTimeOffset]$timeInfo.datetime).DateTime
 
+  # Display IP information (human readable)
   if ($json -eq $false) {
     "You are {0} hops away from {1} with an average ping of {2}." -f $ipInfo.Hops, $ipInfo.IP, $ipInfo.AvgResponse
     "The owner of the netblock is {0}, their ISP is {1} and AS number is {2}." -f $ipInfo.NetblockOwner, $ipInfo.ISP, $ipInfo.AS
     "This IP originates from {0}, {1}, where the current date and time is {2} and the temperature is {3}F." -f $ipInfo.City, $ipInfo.State, $ipInfo.CurrentTime, $ipInfo.CurrentTempF
   }
-
+  # Display IP information (json)
   if ($json -eq $true){
     $ipInfo | ConvertTo-Json
   }
